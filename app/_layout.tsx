@@ -1,8 +1,3 @@
-// import { Stack } from "expo-router";
-
-// export default function RootLayout() {
-//   return <Stack />;
-// }
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 

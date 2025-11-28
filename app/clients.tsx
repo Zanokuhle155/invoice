@@ -10,7 +10,7 @@ const clients = [
 export default function ClientsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Clients</Text>
+      {/* <Text style={styles.title}>Clients</Text> */}
       <FlatList
         data={clients}
         keyExtractor={(item) => item.id}
