@@ -1,7 +1,17 @@
+import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import LoginScreen from "../config/LoginScreen";
 
 export default function RootLayout() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  // Show login first
+  if (!loggedIn) {
+    return <LoginScreen onLogin={() => setLoggedIn(true)} />;
+  }
+
+  // After login show the tabs
   return (
     <Tabs
       screenOptions={{
@@ -10,7 +20,7 @@ export default function RootLayout() {
       }}
     >
       <Tabs.Screen
-        name="index" 
+        name="index"
         options={{
           title: "Invoices",
           tabBarIcon: ({ color, size }) => (
@@ -18,6 +28,7 @@ export default function RootLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="clients"
         options={{
@@ -27,6 +38,7 @@ export default function RootLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="settings"
         options={{
@@ -39,4 +51,3 @@ export default function RootLayout() {
     </Tabs>
   );
 }
-
